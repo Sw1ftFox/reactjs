@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
-import ClassCounter from './components/ClassCounter';
-import './styles/App.css'
-import PostItem from './components/PostItem';
+import React from 'react';
+import './styles/App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+import About from './pages/About';
+import Posts from './pages/Posts';
 
 function App() {
-  const [value, setValue] = useState('ТЕКСТ В ИНПУТЕ');
-  
- 
-
   return (
-    <div className="App">
-      <PostItem></PostItem>
-      <PostItem></PostItem>
-      <PostItem></PostItem>
-      <PostItem></PostItem>
-      <PostItem></PostItem>
-    </div>
-  );
+    <BrowserRouter>
+      <Route path='/about'>
+        <About/>
+      </Route>
+      <Route path='/posts'>
+        <Posts/>
+      </Route>
+    </BrowserRouter>
+  )
 }
 
 export default App;
